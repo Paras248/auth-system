@@ -6,9 +6,11 @@ const jwt = require("jsonwebtoken");
 
 const User = require("./model/user");
 const auth = require("./middleware/auth");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 app.get("/", (req, res) => {
   res.send("<h1>Hello from auth system - Paras</h1>");
